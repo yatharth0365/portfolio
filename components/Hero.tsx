@@ -10,24 +10,24 @@ export default function Hero() {
   return (
     <section className="flex min-h-[70vh] flex-col justify-center py-20">
       <motion.p
-        initial={reduced ? false : { opacity: 0, y: 12 }}
-        animate={reduced ? false : { opacity: 1, y: 0 }}
+        initial={reduced ? undefined : { opacity: 0, y: 12 }}
+        animate={reduced ? undefined : { opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: 'easeOut' }}
         className="mb-3 font-mono text-sm text-zinc-400"
       >
         B.Tech Artificial Intelligence · Expected 2027
       </motion.p>
       <motion.h1
-        initial={reduced ? false : { opacity: 0, y: 16 }}
-        animate={reduced ? false : { opacity: 1, y: 0 }}
+        initial={reduced ? undefined : { opacity: 0, y: 16 }}
+        animate={reduced ? undefined : { opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: 'easeOut', delay: 0.1 }}
         className="text-4xl font-bold leading-tight tracking-tight text-zinc-100 sm:text-5xl"
       >
         <span className="gradient-text">{resume.name}</span>
       </motion.h1>
       <motion.p
-        initial={reduced ? false : { opacity: 0, y: 16 }}
-        animate={reduced ? false : { opacity: 1, y: 0 }}
+        initial={reduced ? undefined : { opacity: 0, y: 16 }}
+        animate={reduced ? undefined : { opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: 'easeOut', delay: 0.2 }}
         className="mt-4 max-w-xl text-lg text-zinc-400"
       >
@@ -35,8 +35,8 @@ export default function Hero() {
         and data systems.
       </motion.p>
       <motion.div
-        initial={reduced ? false : { opacity: 0, y: 16 }}
-        animate={reduced ? false : { opacity: 1, y: 0 }}
+        initial={reduced ? undefined : { opacity: 0, y: 16 }}
+        animate={reduced ? undefined : { opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: 'easeOut', delay: 0.3 }}
         className="mt-8 flex flex-wrap gap-3"
       >

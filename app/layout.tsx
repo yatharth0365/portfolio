@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -6,8 +6,6 @@ export const metadata: Metadata = {
   description:
     'B.Tech Artificial Intelligence candidate building governed predictive-maintenance and data systems.',
   metadataBase: new URL('https://yatharthshrirame.xyz'),
-  viewport: { width: 'device-width', initialScale: 1 },
-  themeColor: '#09090b',
   robots: { index: true, follow: true },
   alternates: { canonical: '/' },
   openGraph: {
@@ -19,6 +17,12 @@ export const metadata: Metadata = {
     images: [{ url: '/og-image.svg', width: 1200, height: 630 }],
   },
   twitter: { card: 'summary_large_image' },
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: '#09090b',
 };
 
 const jsonLd = {

@@ -1,7 +1,7 @@
 'use client';
 
 import { resume } from '@/data/resume';
-import { staggerContainer, staggerItem, hoverLift } from '@/lib/motion';
+import { staggerContainer, staggerItem } from '@/lib/motion';
 import { prefersReducedMotion } from '@/lib/motion';
 import { motion } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
@@ -11,8 +11,8 @@ export default function Projects() {
 
   return (
     <motion.div
-      initial={reduced ? false : 'hidden'}
-      whileInView={reduced ? false : 'show'}
+      initial={reduced ? undefined : 'hidden'}
+      whileInView={reduced ? undefined : 'show'}
       viewport={{ once: true }}
       variants={reduced ? undefined : staggerContainer}
       className="grid gap-4 sm:grid-cols-2"

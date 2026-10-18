@@ -18,8 +18,8 @@ export default function Section({
   return (
     <motion.section
       id={id}
-      initial={reduced ? false : 'hidden'}
-      whileInView={reduced ? false : 'show'}
+      initial={reduced ? undefined : 'hidden'}
+      whileInView={reduced ? undefined : 'show'}
       viewport={{ once: true, margin: '0px 0px -80px 0px' }}
       variants={reduced ? undefined : fadeUp}
       className="scroll-mt-24 py-16"

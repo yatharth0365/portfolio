@@ -12,8 +12,8 @@ export default function Experience() {
     <div className="relative ml-3">
       <div className="absolute left-0 top-2 bottom-2 w-px bg-zinc-800" />
       <motion.div
-        initial={reduced ? false : 'hidden'}
-        whileInView={reduced ? false : 'show'}
+        initial={reduced ? undefined : 'hidden'}
+        whileInView={reduced ? undefined : 'show'}
         viewport={{ once: true }}
         variants={reduced ? undefined : staggerContainer}
         className="space-y-8"

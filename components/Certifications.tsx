@@ -11,8 +11,8 @@ export default function Certifications() {
 
   return (
     <motion.div
-      initial={reduced ? false : 'hidden'}
-      whileInView={reduced ? false : 'show'}
+      initial={reduced ? undefined : 'hidden'}
+      whileInView={reduced ? undefined : 'show'}
       viewport={{ once: true }}
       variants={reduced ? undefined : staggerContainer}
       className="grid gap-3 sm:grid-cols-2"
