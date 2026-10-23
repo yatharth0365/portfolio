@@ -1,16 +1,27 @@
-# Portfolio
+# Yatharth Shrirame — Portfolio
 
-Personal developer portfolio for Yatharth Shrirame — a Next.js (App Router) single page built with Tailwind CSS v4, Framer Motion, and Lucide Icons.
+Personal developer portfolio for Yatharth Girish Shrirame, an Artificial Intelligence undergraduate at GHRCE.
 
-## Run
+## Stack
+
+- Next.js (App Router)
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- Lucide React
+
+## Run locally
 
 ```bash
 npm install
-npm run dev      # http://localhost:3000
-npm run build    # -> out/
-npm run start    # serve the static export
+npm run dev
 ```
 
-## Deploy
+Open [http://localhost:3000](http://localhost:3000).
 
-`next build` produces a static export in `out/`. Drop it on Vercel, Netlify, or GitHub Pages.
+## Production build
+
+```bash
+npm run build
+npm start
+```

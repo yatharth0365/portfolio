@@ -1,57 +1,13 @@
-@import "tailwindcss";
-@import "@fontsource-variable/geist";
-@import "@fontsource-variable/geist-mono";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@theme inline {
-  --font-sans: 'Geist Variable', ui-sans-serif, system-ui, sans-serif;
-  --font-mono: 'Geist Mono Variable', ui-monospace, monospace;
-}
-
-:root {
-  --background: #09090b;
-  --card: #18181b;
-  --card-2: #202023;
-  --border: #27272a;
-  --accent: #6366f1;
-  --accent-2: #22d3ee;
-  --text: #f4f4f5;
-  --muted: #a1a1aa;
-  --muted-card: #d4d4d8;
-  --caption: #71717a;
-}
-
-html {
-  background: var(--background);
-  scroll-behavior: smooth;
-}
-
-body {
-  background: var(--background);
-  color: var(--text);
-  font-family: var(--font-sans);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* Glowing accent primitives */
-.glow {
-  box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.25), 0 0 22px -6px rgba(99, 102, 241, 0.5);
-}
-
-.glow-hover:hover {
-  box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.4), 0 0 30px -4px rgba(99, 102, 241, 0.65);
-}
-
-.gradient-text {
-  background-image: linear-gradient(120deg, var(--accent), var(--accent-2));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-/* Scroll-reveal for reduced-motion users */
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-}
+:root { color-scheme: dark; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: #09090b; color: #fafafa; font-family: Arial, Helvetica, sans-serif; overflow-x: hidden; }
+::selection { background: rgba(16, 185, 129, .35); color: white; }
+.ambient-bg { background: radial-gradient(ellipse 70% 40% at 50% -10%, rgba(16, 185, 129, .16), transparent 72%), radial-gradient(ellipse 50% 30% at 96% 35%, rgba(99, 102, 241, .10), transparent 72%), #09090b; }
+.grid-fade { background-image: linear-gradient(rgba(255,255,255,.027) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.027) 1px, transparent 1px); background-size: 48px 48px; mask-image: linear-gradient(to bottom, black 0%, transparent 78%); }
+.glass { background: rgba(24, 24, 27, .48); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,.075); }
+.section-label { letter-spacing: .16em; text-transform: uppercase; font-size: .7rem; font-weight: 700; color: #34d399; }

@@ -1,39 +1,4 @@
-'use client';
-
-import { resume } from '@/data/resume';
-import { staggerContainer, staggerItem } from '@/lib/motion';
-import { prefersReducedMotion } from '@/lib/motion';
-import { motion } from 'framer-motion';
-
-export default function Skills() {
-  const reduced = prefersReducedMotion;
-
-  return (
-    <div className="space-y-6">
-      {resume.skills.map((group) => (
-        <div key={group.category}>
-          <h3 className="mb-3 font-mono text-xs uppercase tracking-widest text-zinc-500">
-            {group.category}
-          </h3>
-          <motion.div
-            initial={reduced ? undefined : 'hidden'}
-            whileInView={reduced ? undefined : 'show'}
-            viewport={{ once: true }}
-            variants={reduced ? undefined : staggerContainer}
-            className="flex flex-wrap gap-2"
-          >
-            {group.skills.map((skill) => (
-              <motion.span
-                key={skill}
-                variants={reduced ? undefined : staggerItem}
-                className="rounded-md border border-zinc-800 bg-zinc-900/60 px-3 py-1.5 text-sm text-zinc-300"
-              >
-                {skill}
-              </motion.span>
-            ))}
-          </motion.div>
-        </div>
-      ))}
-    </div>
-  );
-}
+"use client";
+import { motion } from "framer-motion";
+const skillGroups = [["Languages", ["Python", "C", "C++", "SQL", "HTML", "CSS"]], ["ML & AI", ["Scikit-learn", "TensorFlow", "Keras", "PyTorch", "Neural Networks"]], ["Data", ["Pandas", "PostgreSQL", "Excel", "Data Cleaning"]], ["Core", ["DSA", "OOP", "File I/O"]]] as const;
+export function Skills() { return <section id="skills" className="mx-auto max-w-6xl px-6 py-24 md:px-10"><motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .2 }} transition={{ duration: .6 }} className="glass overflow-hidden rounded-3xl p-7 sm:p-10"><div className="max-w-xl"><p className="section-label">Capabilities</p><h2 className="mt-4 text-3xl font-semibold tracking-[-.035em] text-zinc-50 sm:text-4xl">A focused technical toolkit.</h2><p className="mt-4 leading-7 text-zinc-400">Building thoughtfully across the data lifecycle — from clean inputs and dependable code to useful, intelligent systems.</p></div><div className="mt-10 grid gap-8 sm:grid-cols-2">{skillGroups.map(([label, skills], groupIndex) => <motion.div key={label} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: .45, delay: groupIndex * .08 }}><h3 className="text-sm font-semibold text-zinc-200">{label}</h3><div className="mt-3 flex flex-wrap gap-2">{skills.map((skill, skillIndex) => <motion.span key={skill} whileHover={{ scale: 1.05 }} transition={{ type: "spring", stiffness: 400, damping: 18 }} className="rounded-full border border-white/10 bg-white/[.035] px-3 py-1.5 text-sm text-zinc-300 hover:border-emerald-300/35 hover:bg-emerald-300/[.07] hover:text-emerald-100" style={{ transitionDelay: `${skillIndex * 10}ms` }}>{skill}</motion.span>)}</div></motion.div>)}</div></motion.div></section>; }
