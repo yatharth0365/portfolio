@@ -1,0 +1,46 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { ArrowDownRight, Github, Globe, Linkedin, Mail, Phone } from "lucide-react";
+
+const socialLinks = [
+  { label: "Email", href: "mailto:yatharth.shrirame@gmail.com", icon: Mail },
+  { label: "Call", href: "tel:+918793774341", icon: Phone },
+  { label: "GitHub", href: "https://github.com/yatharth0365", icon: Github },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/yatharth-shrirame", icon: Linkedin },
+  { label: "Website", href: "https://yatharthshrirame.xyz", icon: Globe },
+];
+
+const ease = [0.16, 1, 0.3, 1] as const;
+
+export function Hero() {
+  return (
+    <section className="relative mx-auto flex min-h-[92vh] max-w-6xl flex-col justify-center px-6 pb-20 pt-32 md:px-10">
+      <motion.div initial="hidden" animate="show" variants={{ hidden: {}, show: { transition: { staggerChildren: 0.12 } } }}>
+        <motion.p variants={{ hidden: { opacity: 0, y: 18 }, show: { opacity: 1, y: 0, transition: { duration: 0.65, ease } } }} className="section-label mb-6 flex items-center gap-3">
+          <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_18px_4px_rgba(52,211,153,.32)]" />
+          Available for opportunities
+        </motion.p>
+        <motion.h1 variants={{ hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0, transition: { duration: 0.7, ease } } }} className="max-w-4xl text-5xl font-semibold tracking-[-.055em] text-zinc-50 sm:text-7xl lg:text-8xl">
+          Yatharth Girish <span className="text-zinc-500">Shrirame.</span>
+        </motion.h1>
+        <motion.div variants={{ hidden: { opacity: 0, y: 18 }, show: { opacity: 1, y: 0, transition: { duration: 0.65, ease } } }} className="mt-7 flex items-center gap-3 text-lg font-medium text-emerald-300 sm:text-xl">
+          <span className="h-px w-8 bg-emerald-400/80" />
+          B.Tech Artificial Intelligence @ GHRCE (2027)
+        </motion.div>
+        <motion.p variants={{ hidden: { opacity: 0, y: 18 }, show: { opacity: 1, y: 0, transition: { duration: 0.65, ease } } }} className="mt-7 max-w-2xl text-base leading-8 text-zinc-400 sm:text-lg">
+          Experienced in machine learning pipelines, predictive modeling, data analytics, and software architecture.
+        </motion.p>
+        <motion.div variants={{ hidden: { opacity: 0, y: 18 }, show: { opacity: 1, y: 0, transition: { duration: 0.65, ease } } }} className="mt-10 flex flex-wrap gap-3">
+          <a href="#projects" className="group inline-flex items-center gap-2 rounded-full bg-emerald-300 px-5 py-3 text-sm font-semibold text-zinc-950 transition hover:bg-emerald-200 focus:outline-none focus:ring-2 focus:ring-emerald-300 focus:ring-offset-2 focus:ring-offset-zinc-950">
+            Explore selected work <ArrowDownRight className="h-4 w-4 transition-transform group-hover:translate-y-0.5 group-hover:translate-x-0.5" />
+          </a>
+          <a href="mailto:yatharth.shrirame@gmail.com" className="glass rounded-full px-5 py-3 text-sm font-medium text-zinc-200 transition hover:border-emerald-300/35 hover:text-white focus:outline-none focus:ring-2 focus:ring-emerald-300">Start a conversation</a>
+        </motion.div>
+        <motion.nav variants={{ hidden: { opacity: 0, y: 18 }, show: { opacity: 1, y: 0, transition: { duration: 0.65, ease } } }} aria-label="Social links" className="mt-12 flex flex-wrap gap-2">
+          {socialLinks.map(({ label, href, icon: Icon }) => <a key={label} href={href} target={href.startsWith("http") ? "_blank" : undefined} rel={href.startsWith("http") ? "noreferrer" : undefined} aria-label={label} className="glass flex h-11 w-11 items-center justify-center rounded-full text-zinc-400 transition duration-300 hover:scale-105 hover:border-emerald-300/40 hover:text-emerald-200 focus:outline-none focus:ring-2 focus:ring-emerald-300"><Icon className="h-[18px] w-[18px]" /></a>)}
+        </motion.nav>
+      </motion.div>
+    </section>
+  );
+}
