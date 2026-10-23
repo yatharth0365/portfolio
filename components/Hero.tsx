@@ -1,10 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowDownRight, Github, Globe, Linkedin, Mail, Phone } from "lucide-react";
+import { ArrowDownRight, Github, Linkedin, Mail, Phone } from "lucide-react";
 
 const socialLinks = [
-  { label: "Email", href: "mailto:yatharth.shrirame@gmail.com", icon: Mail }, { label: "Call", href: "tel:+918793774341", icon: Phone }, { label: "GitHub", href: "https://github.com/yatharth0365", icon: Github }, { label: "LinkedIn", href: "https://www.linkedin.com/in/yatharth-shrirame", icon: Linkedin }, { label: "Website", href: "https://yatharthshrirame.xyz", icon: Globe },
+  { label: "Email", href: "mailto:yatharth.shrirame@gmail.com", icon: Mail }, { label: "Call", href: "tel:+918793774341", icon: Phone }, { label: "GitHub", href: "https://github.com/yatharth0365", icon: Github }, { label: "LinkedIn", href: "https://www.linkedin.com/in/yatharth-shrirame", icon: Linkedin },
 ];
 const ease = [0.16, 1, 0.3, 1] as const;
 
